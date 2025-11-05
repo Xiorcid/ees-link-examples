@@ -5,6 +5,8 @@ Piedāvātais koda piemērs ir paredzēts ESP32 mikrokontrolierim ar MCP2562 tra
 Piemērs nolasa informāciju no CAN un izvada to _Serial_ portā. Piemērs izvada visus pieejamus datus.
 CAN bibliotēka ir pieejama [šeit](https://github.com/sandeepmistry/arduino-CAN).
 ## Dokumentācija
+CAN bitrate ir 500 kbps.
+
 CAN notiek sekojošo ziņojumu parraide:
 1) Barošanas bloka parametri (0x12)
 2) Ātrums                    (0xED)
