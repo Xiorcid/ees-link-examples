@@ -32,16 +32,15 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
 ### Cita informācija par parraidāmo informāciju
 1) Spriegums, strāva un enerģija tiek nolasīti no bloka un pilnībā atbilst tiem, kuri teik sūtīti uz organizatoru serveru.
 2) Ātrums tiek nolasīts no GPS un pilnībā atbilst tam, kas teik sūtīts uz organizatoru serveru. Ātruma ierobežojuma pārkāpšanas gadījumā nekāda papildus informācija netiek sūtīta. Ir jānodrošina vadītāja informēšana par šo notikumu, vai izmantot organizatoru nodrošināto iekārtu (izņemot U25).
-3) Ne visos blokos ir iestādīts akselerometrs. Ja tas ir vajadzīgs, lūgums informēt organizatorus laicīgi.
-4) GPS informācija tiek atjaunota reizi 2 sekundēs, visa cita - reizi 0.5 sekundēs.
+3) Visa informācija tiek atjaunota reizi 0.5 sekundēs.
 
 ## Informācija par barošanas bloku
 ### Elektiskie parametri
 | Parametrs     | Vērtība       |
 | ------------- | ------------- |
-| MAX Spriegums | 63V           |
+| MAX Spriegums | 52V           |
 | MAX Strāva    | 20A           |
-| MAX Jauda     | 1200W         |
+| MAX Jauda     | 1000W         |
 | Ieteicams U   | <48V          |
 
 ### Bloka kontroles plates parametri
@@ -49,6 +48,7 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
 2) Pēc mikrokontroliera pārstartēšanas drošības nolūkos barošanas bloka izeja tiek izslēgta.
 3) Organsizatoriem tiek sūtīti sekojošie mašinas parametri:
    - Strāva
+   - Spriegums
    - Patērētā enerģija
    - GPS ātrums
    - GPS koordinātes
