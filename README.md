@@ -1,5 +1,11 @@
 # EES-link barošanas bloks
 Šis repozitorijs satur EES-link barošanas bloka aprakstu un dokumenāciju
+## Savienojumi
+| Savienojums           | Konektors  |
+| --------------------- | ---------- |
+| Bateriju bloka izeja  | XT90-M     |
+| Barošanas bloka ieeja | XT90-F     |
+| Barošanas bloka izeja | XT60-F     |
 ## Koda piemēra apraksts
 Piedāvātais koda piemērs ir paredzēts ESP32 mikrokontrolierim ar MCP2562 transiveru.
 Piemērs nolasa informāciju no CAN un izvada to _Serial_ portā. Piemērs izvada visus pieejamus datus.
@@ -30,7 +36,7 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
 3) Paātrinājums Z: baiti 4 un 5
 
 ### Cita informācija par parraidāmo informāciju
-1) Spriegums, strāva un enerģija tiek nolasīti no bloka un pilnībā atbilst tiem, kuri teik sūtīti uz organizatoru serveru.
+1) Spriegums, strāva un enerģija tiek nolasīti no bloka un pilnībā atbilst tiem, kuri tiek sūtīti uz organizatoru serveri.
 2) Ātrums tiek nolasīts no GPS un pilnībā atbilst tam, kas teik sūtīts uz organizatoru serveru. Ātruma ierobežojuma pārkāpšanas gadījumā nekāda papildus informācija netiek sūtīta. Ir jānodrošina vadītāja informēšana par šo notikumu, vai izmantot organizatoru nodrošināto iekārtu (izņemot U25).
 3) Visa informācija tiek atjaunota reizi 0.5 sekundēs.
 
