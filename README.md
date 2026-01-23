@@ -3,9 +3,13 @@
 ## Savienojumi
 | Savienojums           | Konektors   |
 | --------------------- | ----------- |
-| Bateriju bloka izeja  | XT90-M      |
-| Barošanas bloka ieeja | XT90-F      |
-| Barošanas bloka izeja | XT60-M (2+4)|
+| Bateriju bloka izeja  | XT90-F      |
+| Barošanas bloka ieeja | XT90-M      |
+| Barošanas bloka izeja | XT60-F (2+4)|
+
+Izejas konektora pinu konfigurācija:
+
+![XT-60-M (2+4) pinout](/ees-psu-pinout.png)
 ## Koda piemēra apraksts
 Piedāvātais koda piemērs ir paredzēts ESP32 mikrokontrolierim ar MCP2562 transiveru.
 Piemērs nolasa informāciju no CAN un izvada to _Serial_ portā. Piemērs izvada visus pieejamus datus.
