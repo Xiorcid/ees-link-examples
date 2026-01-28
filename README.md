@@ -22,7 +22,7 @@ CAN notiek sekojošo ziņojumu parraide:
 2) Ātrums                    (0xED)
 3) Akselerometra parametri   (0xC3)
 4) Informācija par karogu    (0xFE)
-5) Cita telemetrija, kas netiek aprakstīta šajā dokumentā, jo paredzēta iekšējai lietošanai.
+5) Cita telemetrija, kas netiek aprakstīta šajā dokumentā, jo nav paredzēta dalībniekiem.
 
 Visas _float_ vērtības (izņemot enerģiju) tiek parraidītas _int_ veidā - _float_ * 100 (* 1000).
 Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā veidā:
@@ -56,7 +56,8 @@ NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
 ### Cita informācija par parraidāmo informāciju
 1) Spriegums, strāva un enerģija tiek nolasīti no bloka un pilnībā atbilst tiem, kuri tiek sūtīti uz organizatoru serveri.
 2) Ātrums tiek nolasīts no GPS un pilnībā atbilst tam, kas teik sūtīts uz organizatoru serveru. Ātruma ierobežojuma pārkāpšanas gadījumā nekāda papildus informācija netiek sūtīta. Ir jānodrošina vadītāja informēšana par šo notikumu, vai izmantot organizatoru nodrošināto iekārtu (izņemot U25).
-3) Visa informācija tiek atjaunota reizi 0.5 sekundēs.
+3) Informācija par karogiem tiek parraidīta visām mašīnām (izņemot melnbaltu), neievērojot karogu darbības zonu.
+4) Visa informācija tiek atjaunota reizi 0.5 sekundēs.
 
 ## Informācija par barošanas bloku
 ### Elektiskie parametri
@@ -76,14 +77,24 @@ NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
    - Patērētā enerģija
    - GPS ātrums
    - GPS koordinātes
+   - Rezerves akumulatora spriegums
+   - Galvenā akumulatora stāvoklis (ir/nav pieslēgts)
 4) Organizatori attālināti var kontrolēt sekojošus parametrus:
    - Strāvas ierobežojums
+   - Spriegums
    - Bloka izejas stāvoklis (ON/OFF)
       NB! Organizatori patur tiesības izslēgt bloku nedrošas braukšanas vai noteikumu pārkāpšanas gadījumā!
-   - Spriegums
+   - Informācija par karogiem uz trases
 
 ## Cita informācija
 1) Dalībnieki var pieprasīt paketes identifikatora maiņu, ja tas sakrīt ar citu CAN ierīču pakešu identifikatoriem, sazinoties ar organizatoriem.
+
+## BUJ
+### Kāds ir bloka ieslēgšanas laiks pēc baterijas pārslēgšanas?
+   Bloks satur rezerves akumulatoru, tāpēc dažu sekunžu laikā parametri tiks uzstādīti uz bloka izejas. Ja rezerves akumulators ir izlādēts, ieslēģšana var aizņemt līdz 30 s.
+   
+### Kas notiek, ja sacensību dienā attalinātā kontrole nestrādā?
+   Bloka parametru uzstādīšana un nolasīšana tiks veikta manuāli, izmantojot ekrānu vai WEB interfeisu. Informācija CAN interfeisā būs pieejama (izņemot karogus).
 
 ## Errata
 1) CAN bitrate ir 250 kbps.
