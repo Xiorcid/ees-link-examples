@@ -72,19 +72,20 @@ NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
 1) Mikrokontrolieris ir ESPRESSIF ESP32, GSM modulis - SIMCOM A7670E.
 2) Pēc mikrokontroliera pārstartēšanas drošības nolūkos barošanas bloka izeja tiek izslēgta.
 3) Organsizatoriem tiek sūtīti sekojošie mašinas parametri:
-   - Strāva
-   - Spriegums
-   - Patērētā enerģija
-   - GPS ātrums
-   - GPS koordinātes
-   - Rezerves akumulatora spriegums
-   - Galvenā akumulatora stāvoklis (ir/nav pieslēgts)
+   - Strāva;
+   - Spriegums;
+   - Patērētā enerģija;
+   - GPS ātrums;
+   - GPS koordinātes;
+   - Rezerves akumulatora spriegums;
+   - Galvenā akumulatora stāvoklis (ir/nav pieslēgts).
 4) Organizatori attālināti var kontrolēt sekojošus parametrus:
-   - Strāvas ierobežojums
-   - Spriegums
-   - Bloka izejas stāvoklis (ON/OFF)
+   - Strāvas ierobežojums;
+     NB! Organizatori patur tiesības samazinat jaudu, ja uz trases ir izveidojusies bīstama situācija!
+   - Spriegums;
+   - Bloka izejas stāvoklis (ON/OFF);
       NB! Organizatori patur tiesības izslēgt bloku nedrošas braukšanas vai noteikumu pārkāpšanas gadījumā!
-   - Informācija par karogiem uz trases
+   - Informācija par karogiem uz trases.
 
 ## Cita informācija
 1) Dalībnieki var pieprasīt paketes identifikatora maiņu, ja tas sakrīt ar citu CAN ierīču pakešu identifikatoriem, sazinoties ar organizatoriem.
