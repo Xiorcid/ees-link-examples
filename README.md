@@ -21,6 +21,8 @@ CAN notiek sekojošo ziņojumu parraide:
 1) Barošanas bloka parametri (0x12)
 2) Ātrums                    (0xED)
 3) Akselerometra parametri   (0xC3)
+4) Informācija par karogu    (0xFE)
+5) Cita telemetrija, kas netiek aprakstīta šajā dokumentā, jo paredzēta iekšējai lietošanai.
 
 Visas _float_ vērtības (izņemot enerģiju) tiek parraidītas _int_ veidā - _float_ * 100 (* 1000).
 Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā veidā:
@@ -38,6 +40,18 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
 1) Paātrinājums X: baiti 0 un 1
 2) Paātrinājums Y: baiti 2 un 3
 3) Paātrinājums Z: baiti 4 un 5
+
+### 0xFE paketes uzbūve
+1) Karogs uz trases: baits 0
+#### Baita 0 atbilstības tabula
+| Kods | Karogs    |
+| -----| --------- |
+| 0x7F | Sarkans   |
+| 0x3E | Dzeltens  |
+| 0x4B | Zaļš      |
+| 0x9A | Melnbalts |
+
+NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
 
 ### Cita informācija par parraidāmo informāciju
 1) Spriegums, strāva un enerģija tiek nolasīti no bloka un pilnībā atbilst tiem, kuri tiek sūtīti uz organizatoru serveri.
@@ -67,6 +81,9 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
    - Bloka izejas stāvoklis (ON/OFF)
       NB! Organizatori patur tiesības izslēgt bloku nedrošas braukšanas vai noteikumu pārkāpšanas gadījumā!
    - Spriegums
+
+## Cita informācija
+1) Dalībnieki var pieprasīt paketes identifikatora maiņu, ja tas sakrīt ar citu CAN ierīču pakešu identifikatoriem, sazinoties ar organizatoriem.
 
 ## Errata
 1) CAN bitrate ir 250 kbps.
