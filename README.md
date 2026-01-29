@@ -14,6 +14,8 @@ Izejas konektora pinu konfigurācija:
 Piedāvātais koda piemērs ir paredzēts ESP32 mikrokontrolierim ar MCP2562 transiveru.
 Piemērs nolasa informāciju no CAN un izvada to _Serial_ portā. Piemērs izvada visus pieejamus datus.
 CAN bibliotēka ir pieejama [šeit](https://github.com/sandeepmistry/arduino-CAN).
+
+**NB! Nemodifcētā piemēra izmantošana iekārtā netiek ieskaitīta punkta 6.5.l prasībās. Izveidotajai iekārtai jābūt praktiski pielietojamai brauciena laikā.**
 ## Dokumentācija
 CAN bitrate ir 500 kbps.
 
