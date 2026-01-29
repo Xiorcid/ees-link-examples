@@ -20,10 +20,10 @@ CAN bibliotēka ir pieejama [šeit](https://github.com/sandeepmistry/arduino-CAN
 CAN bitrate ir 500 kbps.
 
 CAN notiek sekojošo ziņojumu parraide:
-1) Barošanas bloka parametri (0x12)
-2) Ātrums                    (0xED)
-3) Akselerometra parametri   (0xC3)
-4) Informācija par karogu    (0xFE)
+1) Barošanas bloka parametri; (0x12)
+2) Ātrums;                    (0xED)
+3) Akselerometra parametri;   (0xC3)
+4) Informācija par karogu;    (0xFE)
 5) Cita telemetrija, kas netiek aprakstīta šajā dokumentā, jo nav paredzēta dalībniekiem.
 
 Visas _float_ vērtības (izņemot enerģiju) tiek parraidītas _int_ veidā - _float_ * 100 (* 1000).
@@ -46,12 +46,12 @@ Visas vērtības ir kodētas ar diviem baitiem, to atšifrēšana notiek šādā
 ### 0xFE paketes uzbūve
 1) Karogs uz trases: baits 0
 #### Baita 0 atbilstības tabula
-| Kods | Karogs    |
-| -----| --------- |
-| 0x7F | Sarkans   |
-| 0x3E | Dzeltens  |
-| 0x4B | Zaļš      |
-| 0x9A | Melnbalts |
+| Kods | Karogs      |
+| -----| ---------   |
+| 0x7F | Sarkans     |
+| 0x3E | Dzeltens    |
+| 0x4B | Zaļš        |
+| 0x9A | Melns-balts |
 
 NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
 
@@ -80,7 +80,8 @@ NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
    - GPS ātrums;
    - GPS koordinātes;
    - Rezerves akumulatora spriegums;
-   - Galvenā akumulatora stāvoklis (ir/nav pieslēgts).
+   - Galvenā akumulatora stāvoklis (ir/nav pieslēgts);
+   - Galvenā akumulatora spriegums.
 4) Organizatori attālināti var kontrolēt sekojošus parametrus:
    - Strāvas ierobežojums;
      NB! Organizatori patur tiesības samazinat jaudu, ja uz trases ir izveidojusies bīstama situācija!
@@ -91,6 +92,7 @@ NB! Bait 0x9A tiek parraidīts tikai iesaistītai mašīnai.
 
 ## Cita informācija
 1) Dalībnieki var pieprasīt paketes identifikatora maiņu, ja tas sakrīt ar citu CAN ierīču pakešu identifikatoriem, sazinoties ar organizatoriem.
+2) Dalībniekiem nav atļauts veikt bloka programmatūras modifikācijas.
 
 ## BUJ
 ### Kāds ir bloka ieslēgšanas laiks pēc baterijas pārslēgšanas?
